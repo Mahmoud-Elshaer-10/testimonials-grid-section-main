@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+/* Variables */
+:root {
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+/* Global Rules Start */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.3em;
+}
+/* Global Rules End */
+body {
+  background-color: var(--Light-grayish-blue);
+  font-family: "Barlow Semi Condensed", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+main {
+  margin: 3rem auto;
+  width: 76.5%;
+  max-width: 1120px;
+}
+article {
+  border-radius: 10px;
+  padding: 3rem;
+  margin-bottom: 2rem;
+  color: white;
+  box-shadow: 0 5px 15px 0 #dadee1;
+}
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+article img {
+  border-radius: 50%;
+  width: 35px;
+}
+.daniel img,
+.patrick img {
+  border: 2px solid #a775f2;
+}
+.daniel {
+  background-color: var(--Moderate-violet);
+  background-image: url(../images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 3rem) 0;
+}
+.name {
+  margin-left: 1.5rem;
+}
+.name p:last-child {
+  opacity: 0.5;
+}
+article > p:first-of-type {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+article > p:last-of-type {
+  opacity: 0.7;
+  line-height: 1.4;
+}
+.jonathan {
+  background-color: var(--Very-dark-grayish-blue);
+}
+.jeanette,
+.kira {
+  background-color: white;
+  color: var(--Very-dark-grayish-blue);
+}
+.patrick {
+  background-color: var(--Very-dark-blackish-blue);
+}
+/* Desktop Media */
+@media (min-width: 1200px) {
+  main {
+    display: grid;
+    grid-template-areas:
+      "daniel daniel jonathan kira"
+      "jeanette patrick patrick kira";
+    gap: 3rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .daniel {
+    grid-area: daniel;
+  }
+  .jonathan {
+    grid-area: jonathan;
+  }
+  .jeanette {
+    grid-area: jeanette;
+  }
+  .kira {
+    grid-area: kira;
+  }
+  .patrick {
+    grid-area: patrick;
+  }
+  article {
+    margin-bottom: 0;
+  }
+}
+article {
+  transition: transform 300ms;
+}
+article:hover {
+  transform: translateY(-2rem);
+}
