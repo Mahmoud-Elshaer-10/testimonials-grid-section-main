@@ -129,5 +129,5 @@ article:hover {
 h1,
 h2 {
   visibility: hidden;
-  height: 0;
+  position: absolute;
 }
