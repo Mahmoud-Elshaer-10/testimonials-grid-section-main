@@ -126,3 +126,8 @@ article {
 article:hover {
   transform: translateY(-2rem);
 }
+h1,
+h2 {
+  visibility: hidden;
+  height: 0;
+}
